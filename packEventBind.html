@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <a href="http://www.baidu.com" id="link1">baidu.com</a>
+    </div>
+
+
+    <script>
+        //封装通用绑定事件函数
+        // 参数为事件三要素：元素、事件类型、触发函数
+        function bindEvent(elem, type, fn){
+            elem.addEventListener(type, fn);
+        }
+
+        var link1 = document.getElementById('link1');
+        //使用通用函数
+        bindEvent(link1, 'click', function(e){
+            //阻止默认行为，在a标签就是阻止挑战页面
+            e.preventDefault();
+            //要执行的事件
+            console.log(123);
+        });
+    </script>
+</body>
+</html>
